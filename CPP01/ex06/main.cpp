@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiski <amiski@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 18:36:05 by amiski            #+#    #+#             */
-/*   Updated: 2022/11/12 03:10:14 by amiski           ###   ########.fr       */
+/*   Created: 2022/11/12 01:44:30 by amiski            #+#    #+#             */
+/*   Updated: 2022/11/12 02:40:02 by amiski           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include"Weapon.hpp"
-
-class HumanA
+#include"Harl.hpp"
+int main(int ac, char **av)
 {
-    private:
-        Weapon &weapon;
-        std::string name;
-    public:
-        HumanA(std::string name, Weapon &weapon); 
-         ~HumanA();
-        void attack();
-};
+    if(ac != 2)
+        return (0);
+    Harl a;
+    a.complain(av[1]);
+    return(0);
+}

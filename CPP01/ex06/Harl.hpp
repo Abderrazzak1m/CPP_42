@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiski <amiski@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 18:36:05 by amiski            #+#    #+#             */
-/*   Updated: 2022/11/12 03:10:14 by amiski           ###   ########.fr       */
+/*   Created: 2022/11/12 01:43:41 by amiski            #+#    #+#             */
+/*   Updated: 2022/11/12 01:46:36 by amiski           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include"Weapon.hpp"
 
-class HumanA
+#include<iostream>
+#include<string>
+
+class Harl
 {
-    private:
-        Weapon &weapon;
-        std::string name;
     public:
-        HumanA(std::string name, Weapon &weapon); 
-         ~HumanA();
-        void attack();
+       void debug( void );
+       void info( void );
+       void warning( void );
+       void error( void );
+       void complain(std::string level);
 };

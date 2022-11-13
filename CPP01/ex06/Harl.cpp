@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amiski <amiski@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 02:39:10 by amiski            #+#    #+#             */
-/*   Updated: 2022/11/12 03:46:50 by amiski           ###   ########.fr       */
+/*   Created: 2022/11/12 01:43:48 by amiski            #+#    #+#             */
+/*   Updated: 2022/11/12 03:05:55 by amiski           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "Harl.hpp"
 
@@ -36,6 +37,10 @@ void Harl::error()
     std::cout <<"This is unacceptable! I want to speak to the manager now."<<std::endl << std::endl;
 }
 
+void info(){
+    std::cout<<"hi";
+}
+
 void Harl::complain(std::string level)
 {
      typedef void(Harl::*func)();
@@ -45,6 +50,21 @@ void Harl::complain(std::string level)
     for(i = 0; i < 4; i++)
     {
         if(level == levels[i])
-            (this->*(ls[i]))();
+        {
+            switch (i)
+            {
+                case 0:
+                    (this->*(ls[0]))();
+                case 1:
+                    (this->*(ls[1]))();
+                case 2:
+                    (this->*(ls[2]))();
+                case 3:
+                    (this->*(ls[3]))();
+                default:
+                    return ;  
+            }
+        }
     }
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 };
